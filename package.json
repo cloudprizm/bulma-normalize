@@ -8,6 +8,9 @@
   "scripts": {
     "archetype:update": "spell new library"
   },
+  "dependencies": {
+    "@hungry/bulma-theme": "~0.0.1"
+  },
   "homepage": "https://github.com/damianbaar/catch-the-sun/tree/master/packages/component/bulma-normalize",
   "repository": "https://github.com/damianbaar/catch-the-sun/tree/master/packages/component/bulma-normalize"
 }
