@@ -1,16 +1,66 @@
 {
   "name": "@hungry/bulma-normalize",
   "version": "0.0.1",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "private": false,
-  "license": "TBD",
+  "license": "MIT",
   "sideEffects": false,
   "scripts": {
-    "archetype:update": "spell new library"
+    "archetype:update": "spell new library-os",
+    "build:code": "babel src/** -d dist --extensions \".ts\",\".tsx\" && babel src -d dist --extensions '.ts','.tsx'",
+    "prepublish": "yarn build:code && yarn test && yarn build",
+    "test": "jest",
+    "build:declarations": "tsc --build tsconfig.json",
+    "build": "concurrently --names '@hungry/bulma-normalize' 'yarn build:declarations' 'yarn build:code'",
+    "watch": "concurrently --names '@hungry/bulma-normalize' 'yarn build:declarations --watch' 'yarn build:code --watch'",
+    "docs": "typedoc --out docs ./src/*.ts"
   },
   "dependencies": {
+    "@hungry/babel-preset-cli": "^0.1.1",
     "@hungry/bulma-theme": "~0.0.1"
   },
-  "homepage": "https://github.com/damianbaar/catch-the-sun/tree/master/packages/component/bulma-normalize",
-  "repository": "https://github.com/damianbaar/catch-the-sun/tree/master/packages/component/bulma-normalize"
+  "homepage": "https://github.com/hungry-consulting/hungry-consulting/bulma-normalize",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hungry-consulting/hungry-consulting/bulma-normalize"
+  },
+  "babel": {
+    "presets": [
+      "@hungry/cli"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "typings": "dist/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/hungry-consulting/hungry-consulting/bulma-normalize/issues",
+    "email": "damian.baar@gmail.com"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "babel-jest"
+    },
+    "testRegex": "/__tests__/.*\\.test\\.tsx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@types/jest": "^23.3.12",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "concurrently": "^4.1.0",
+    "jest": "^23.6.0",
+    "typedoc": "^0.14.0",
+    "typescript": "^3.2.2"
+  }
 }
