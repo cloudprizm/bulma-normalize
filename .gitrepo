@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/hungry-consulting/bulma-normalize
+	branch = master
+	commit = b82de78c5d7093274c93ec7dc9a2c9fd5e9a7d9b
+	method = merge
+	cmdver = 0.4.0
+	parent = fa111e512a120f1a3280b413092e12539a96a28b
