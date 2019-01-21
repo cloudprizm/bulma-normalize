@@ -1,6 +1,6 @@
 {
   "name": "@hungry/bulma-normalize",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "private": false,
   "license": "MIT",
@@ -17,7 +17,7 @@
     "docs": "typedoc --out docs ./src/*.ts"
   },
   "dependencies": {
-    "@hungry/babel-preset-cli": "^0.1.2",
+    "@hungry/babel-preset-cli": "^0.1.3",
     "@hungry/bulma-theme": "^0.1.0"
   },
   "homepage": "https://github.com/hungry-consulting/hungry-consulting/bulma-normalize",
